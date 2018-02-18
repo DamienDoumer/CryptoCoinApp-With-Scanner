@@ -13,7 +13,7 @@ namespace CryptoCoinMon
 		{
 			InitializeComponent();
 
-			MainPage = new CryptoCoinMon.MainPage();
+			MainPage = new CryptoCoinMon.Views.MainPage();
 		}
 
 		protected override void OnStart ()
