@@ -6,8 +6,19 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="Images\dolar.png" />
+    <None Remove="Images\euro.png" />
+  </ItemGroup>
+
+  <ItemGroup>
     <EmbeddedResource Include="Images\CryptoLogo.png">
       <LogicalName>CryptoCoinMon.Images.CryptoLogo.png</LogicalName>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Images\dolar.png">
+      <LogicalName>CryptoCoinMon.Images.dolar.png</LogicalName>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Images\euro.png">
+      <LogicalName>CryptoCoinMon.Images.euro.png</LogicalName>
     </EmbeddedResource>
   </ItemGroup>
 
@@ -36,10 +47,14 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <EmbeddedResource Update="Views\CryptoDetailPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
   </ItemGroup>
 
   <ItemGroup>
     <Folder Include="Helpers\" />
     <Folder Include="Models\" />
+    <Folder Include="Services\" />
   </ItemGroup>
 </Project>

@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using CryptoCoinMon.Views;
 
 using Xamarin.Forms;
 
@@ -13,7 +14,7 @@ namespace CryptoCoinMon
 		{
 			InitializeComponent();
 
-			MainPage = new CryptoCoinMon.Views.MainPage();
+			MainPage = new NavigationPage(new MainPage());
 		}
 
 		protected override void OnStart ()

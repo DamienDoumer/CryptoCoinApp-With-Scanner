@@ -2,16 +2,95 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:local="clr-namespace:CryptoCoinMon.Views"
+             xmlns:valueConverters="clr-namespace:CryptoCoinMon.Views.ValueConverters"
              x:Class="CryptoCoinMon.Views.MainPage">
 
-    <StackLayout>
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <valueConverters:ImageAsResourceValueConverter x:Key="imageAsResConverter"/>
+            <valueConverters:ImageFromURLConverter x:Key="imageAsUrlConverter"/>
+        </ResourceDictionary>
+    </ContentPage.Resources>
 
-        <Label Text="Welcome to Xamarin.Forms!" 
-           VerticalOptions="Center" 
-           HorizontalOptions="Center" />
-        <Image x:Name="Img" HeightRequest="400" WidthRequest="100" BackgroundColor="Black">
-            
-        </Image>
-    </StackLayout>
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Name="ItemUNo" Text="Dollar" Command="{Binding DollarCurrencyCommand}"
+                     Icon="{Binding DollarIcon, Converter={StaticResource imageAsResConverter}}" 
+                     Order="Secondary" Priority="1"/>
+        <ToolbarItem Name="ItemDuo" Text="Euro" Order="Secondary" Command="{Binding EuroCurrencyCommand}"
+                     Icon="{Binding EuroIcon, Converter={StaticResource imageAsResConverter}}"
+                     Priority="1"/>
+    </ContentPage.ToolbarItems>
+
+    <ListView ItemsSource="{Binding CryptoCurrencies}"
+              IsPullToRefreshEnabled="True" SeparatorColor="White"
+              IsRefreshing="{Binding IsRefreshing}"
+              SelectedItem="{Binding SelectedItem}"
+              RefreshCommand="{Binding RefreshCommand}">
+
+        <ListView.Header>
+            <Grid Margin="7">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition Width="100"/>
+                    <ColumnDefinition Width="50"/>
+                </Grid.ColumnDefinitions>
+
+                <Label Text="Coin Name (Code)" Grid.Column="0"/>
+                <Label Text="Price" Grid.Column="1"/>
+                <Label Text="24h" Grid.Column="2"/>
+
+            </Grid>
+        </ListView.Header>
+
+        <ListView.ItemTemplate>
+            <DataTemplate>
+                <ViewCell>
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition/>
+                            <ColumnDefinition Width="100"/>
+                            <ColumnDefinition Width="50"/>
+                        </Grid.ColumnDefinitions>
+
+                        <Grid>
+
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="50"/>
+                                <ColumnDefinition/>
+                            </Grid.ColumnDefinitions>
+
+                            <StackLayout HorizontalOptions="Start" Margin="10, 1, 0, 0">
+                                <Image Source="{Binding ImageUrl, Converter={StaticResource imageAsUrlConverter}}"
+                                   HorizontalOptions="Center"
+                                   VerticalOptions="Start"/>
+                                <Label Text="{Binding Symbol}"
+                                       VerticalOptions="Center"
+                                       TextColor="Black" FontSize="Micro"
+                                       HorizontalOptions="Center"/>
+                            </StackLayout>
+
+                            <Label HorizontalOptions="Start" VerticalOptions="Center"
+                                   Grid.Column="1" TextColor="Black"
+                                   LineBreakMode="WordWrap" Text="{Binding Name}"/>
+                        </Grid>
+
+                        <Label Text="{Binding Price}"
+                               Grid.Column="1" Margin="-9, 0, 0, 0"
+                               TextColor="Black"
+                               HorizontalOptions="Start"
+                               VerticalOptions="Center"/>
+
+                        <Label Text="{Binding PercentChange24h}" 
+                               Grid.Column="2" Margin="-10, 0, 0, 0"
+                               HorizontalOptions="Start"
+                               VerticalOptions="Center"
+                               TextColor="{Binding Color}"/>
+
+                    </Grid>
+                </ViewCell>
+            </DataTemplate>
+        </ListView.ItemTemplate>
+
+    </ListView>
 
 </ContentPage>

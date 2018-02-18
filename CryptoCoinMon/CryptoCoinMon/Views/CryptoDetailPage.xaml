@@ -1,0 +1,82 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="CryptoCoinMon.Views.CryptoDetailPage">
+
+    <ContentPage.Content>
+        <Grid Margin="10">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="50"/>
+                <RowDefinition/>
+                <RowDefinition Height="50"/>
+            </Grid.RowDefinitions>
+
+            <Image x:Name="CurrencyIcon" 
+                   BackgroundColor="White" HeightRequest="100" WidthRequest="100"
+                   HorizontalOptions="Center" VerticalOptions="Center"/>
+
+            <Grid Grid.Row="1">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+
+                <Label Grid.Column="0" Grid.Row="0" Text="Name"/>
+                <Label Grid.Column="1" Grid.Row="0" x:Name="Name" HorizontalOptions="End" FontAttributes="Bold"/>
+
+                <Label Grid.Column="0" Grid.Row="1" Text="Symbol"/>
+                <Label Grid.Column="1" Grid.Row="1" x:Name="Symbol"  HorizontalOptions="End" FontAttributes="Bold"/>
+
+                <Label Grid.Column="0" Grid.Row="2" Text="Rank"/>
+                <Label Grid.Column="1" Grid.Row="2"  HorizontalOptions="End" FontAttributes="Bold" x:Name="Rank"/>
+
+                <Label Grid.Column="0" Grid.Row="3" Text="Price USD"/>
+                <Label Grid.Column="1" Grid.Row="3" x:Name="PriceUSD" HorizontalOptions="End" FontAttributes="Bold"/>
+
+                <Label Grid.Column="0" Grid.Row="4" Text="Price BTC"/>
+                <Label Grid.Column="1" Grid.Row="4" x:Name="PriceBTC" HorizontalOptions="End" FontAttributes="Bold"/>
+
+                <Label Grid.Column="0" Grid.Row="5" Text="24 Hour Volume USD" />
+                <Label Grid.Column="1" Grid.Row="5" x:Name="_24VolUSD" HorizontalOptions="End" FontAttributes="Bold"/>
+
+                <Label Grid.Column="0" Grid.Row="6" Text="Market Cap USD"/>
+                <Label Grid.Column="1" Grid.Row="6" FontAttributes="Bold" HorizontalOptions="End" x:Name="MarketCapUSD"/>
+
+                <Label Grid.Column="0" Grid.Row="7" Text="Available Supply"/>
+                <Label Grid.Column="1" Grid.Row="7" FontAttributes="Bold" HorizontalOptions="End" x:Name="AvailableSup"/>
+
+                <Label Grid.Column="0" Grid.Row="8" Text="Total Supply"/>
+                <Label Grid.Column="1" Grid.Row="8" x:Name="TotalSupply" HorizontalOptions="End" FontAttributes="Bold"/>
+
+                <Label Grid.Column="0" Grid.Row="9" Text="Change1h"/>
+                <Label Grid.Column="1" Grid.Row="9" FontAttributes="Bold" HorizontalOptions="End" x:Name="Change1h"/>
+
+                <Label Grid.Column="0" Grid.Row="10" Text="Change 24h"/>
+                <Label Grid.Column="1" Grid.Row="10" FontAttributes="Bold" HorizontalOptions="End" x:Name="Change24h"/>
+
+                <Label Grid.Column="0" Grid.Row="11" Text="Change 7d"/>
+                <Label Grid.Column="1" Grid.Row="11" FontAttributes="Bold" HorizontalOptions="End" x:Name="Change7d"/>
+            </Grid>
+
+            <Button Grid.Row="2" Text="Buy BitCoin" 
+                    HeightRequest="50" x:Name="BuyBtn"
+                    WidthRequest="80" TextColor="Wheat"
+                    BackgroundColor="#c19400" BorderRadius="90"/>
+
+        </Grid>
+    </ContentPage.Content>
+    
+</ContentPage>

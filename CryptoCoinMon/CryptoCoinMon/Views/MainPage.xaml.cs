@@ -21,5 +21,11 @@ namespace CryptoCoinMon.Views
             //Img.Source = ImageSource.FromResource(@"CryptoCoinMon.Images.CryptoLogo.png", assembly) ;
             //var g = Assembly.GetExecutingAssembly().GetManifestResourceNames();
         }
+        protected override void OnAppearing()
+        {
+            var context = BindingContext as MainViewModel;
+            context?.Initialize();
+            base.OnAppearing();
+        }
     }
 }
