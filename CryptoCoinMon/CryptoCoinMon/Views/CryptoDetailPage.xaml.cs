@@ -17,6 +17,8 @@ namespace CryptoCoinMon.Views
 
         public CryptoDetailPage()
         {
+            InitializeComponent();
+
             Title = Currency.Name;
             CurrencyIcon.Source = ImageSource.FromUri(new Uri(Currency.ImageUrl));
             Name.Text = Currency.Name;

@@ -23,8 +23,7 @@ namespace CryptoCoinMon.ViewModels
                 if (value != null)
                 {
                     CryptoDetailPage.Currency = value;
-                    //_navService.NavigateTo(MenuOptionPage.CryptoDetails);
-                    App.Current.MainPage.Navigation.PushModalAsync(new NavigationPage(new CryptoDetailPage()));
+                    App.Current.MainPage.Navigation.PushModalAsync(new CryptoDetailPage());
                 }
             }
         }
