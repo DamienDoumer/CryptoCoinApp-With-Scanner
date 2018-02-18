@@ -4,8 +4,14 @@
              xmlns:local="clr-namespace:CryptoCoinMon"
              x:Class="CryptoCoinMon.MainPage">
 
-	<Label Text="Welcome to Xamarin.Forms!" 
+    <StackLayout>
+
+        <Label Text="Welcome to Xamarin.Forms!" 
            VerticalOptions="Center" 
            HorizontalOptions="Center" />
+        <Image x:Name="Img" HeightRequest="400" WidthRequest="100" BackgroundColor="Black">
+            
+        </Image>
+    </StackLayout>
 
 </ContentPage>
