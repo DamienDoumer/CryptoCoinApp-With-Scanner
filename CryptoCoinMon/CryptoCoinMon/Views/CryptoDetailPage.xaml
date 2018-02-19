@@ -71,11 +71,6 @@
                 <Label Grid.Column="1" Grid.Row="11" FontAttributes="Bold" HorizontalOptions="End" x:Name="Change7d"/>
             </Grid>
 
-            <Button Grid.Row="2" Text="Buy BitCoin" 
-                    HeightRequest="50" x:Name="BuyBtn"
-                    WidthRequest="80" TextColor="Wheat"
-                    BackgroundColor="#c19400" BorderRadius="90"/>
-
         </Grid>
     </ContentPage.Content>
     
