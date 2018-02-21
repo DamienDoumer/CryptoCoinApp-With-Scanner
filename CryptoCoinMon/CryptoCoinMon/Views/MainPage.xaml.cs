@@ -19,6 +19,13 @@ namespace CryptoCoinMon.Views
 
             var assembly = typeof(MainPage).Assembly;
 
+            //switch(Device.RuntimePlatform)
+            //{
+            //    case Device.Android:
+
+            //        break;
+            //}
+
             //var assembly = typeof(MainPage).Assembly;
             //Img.Source = ImageSource.FromResource(@"CryptoCoinMon.Images.CryptoLogo.png", assembly) ;
             //var g = Assembly.GetExecutingAssembly().GetManifestResourceNames();

@@ -5,7 +5,7 @@
              xmlns:valueConverters="clr-namespace:CryptoCoinMon.Views.ValueConverters"
              x:Class="CryptoCoinMon.Views.MainPage"
              Title="Cryptocurrencies"
-             Icon="">
+             Icon="logo.png">
 
     <ContentPage.Resources>
         <ResourceDictionary>
