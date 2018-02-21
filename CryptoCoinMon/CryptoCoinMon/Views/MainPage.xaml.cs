@@ -17,6 +17,8 @@ namespace CryptoCoinMon.Views
             InitializeComponent();
             BindingContext = new MainViewModel();
 
+            var assembly = typeof(MainPage).Assembly;
+
             //var assembly = typeof(MainPage).Assembly;
             //Img.Source = ImageSource.FromResource(@"CryptoCoinMon.Images.CryptoLogo.png", assembly) ;
             //var g = Assembly.GetExecutingAssembly().GetManifestResourceNames();

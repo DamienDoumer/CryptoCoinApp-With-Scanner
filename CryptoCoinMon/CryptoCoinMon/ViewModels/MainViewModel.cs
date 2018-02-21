@@ -53,9 +53,11 @@ namespace CryptoCoinMon.ViewModels
 
         public string DollarIcon { get; set; }
         public string EuroIcon { get; set; }
+        public string MainIcon { get; set; }
 
         public MainViewModel()
         {
+            MainIcon = "Logo.png";
             CryptoCurrencies = new ObservableCollection<CryptoCurrency>();
             RefreshCommand = new RelayCommand(async () => await RefreshList());
             _cryptoDataService = new CryptoDataService();

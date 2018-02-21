@@ -11,7 +11,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <EmbeddedResource Include="Images\CryptoLogo.png">
+    <EmbeddedResource Include="Images\Logo.png">
       <LogicalName>CryptoCoinMon.Images.CryptoLogo.png</LogicalName>
     </EmbeddedResource>
     <EmbeddedResource Include="Images\dolar.png">

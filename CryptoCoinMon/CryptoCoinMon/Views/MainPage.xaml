@@ -3,7 +3,9 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:local="clr-namespace:CryptoCoinMon.Views"
              xmlns:valueConverters="clr-namespace:CryptoCoinMon.Views.ValueConverters"
-             x:Class="CryptoCoinMon.Views.MainPage">
+             x:Class="CryptoCoinMon.Views.MainPage"
+             Title="Cryptocurrencies"
+             Icon="">
 
     <ContentPage.Resources>
         <ResourceDictionary>

@@ -134,4 +134,7 @@
       <Name>CryptoCoinMon</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\Logo.png" />
+  </ItemGroup>
 </Project>
