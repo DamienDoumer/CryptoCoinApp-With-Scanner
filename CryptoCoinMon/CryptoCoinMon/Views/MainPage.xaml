@@ -15,11 +15,11 @@
     </ContentPage.Resources>
 
     <ContentPage.ToolbarItems>
+        <ToolbarItem Name="ItemTre" Text="QR Scanner" Order="Primary" Command="{Binding CallQRScannerCommand}"
+                     Priority="1"/>
         <ToolbarItem Name="ItemUNo" Text="Dollar" Command="{Binding DollarCurrencyCommand}"
-                     Icon="{Binding DollarIcon, Converter={StaticResource imageAsResConverter}}" 
                      Order="Secondary" Priority="1"/>
         <ToolbarItem Name="ItemDuo" Text="Euro" Order="Secondary" Command="{Binding EuroCurrencyCommand}"
-                     Icon="{Binding EuroIcon, Converter={StaticResource imageAsResConverter}}"
                      Priority="1"/>
     </ContentPage.ToolbarItems>
 

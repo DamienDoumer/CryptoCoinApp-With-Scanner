@@ -28,6 +28,7 @@ namespace CryptoCoinMon.ViewModels
             }
         }
 
+        public RelayCommand CallQRScannerCommand { get; private set; }
         public RelayCommand DollarCurrencyCommand { get; set; }
         public RelayCommand EuroCurrencyCommand { get; set; }
 
@@ -73,6 +74,7 @@ namespace CryptoCoinMon.ViewModels
                 Settings.PrefferedCurrency = "euro";
                 await LoadCrypto();
             });
+            CallQRScannerCommand = new RelayCommand(async () => await App.Current.MainPage.Navigation.PushAsync(new QRScannerPage()));
         }
 
         public async Task Initialize()
