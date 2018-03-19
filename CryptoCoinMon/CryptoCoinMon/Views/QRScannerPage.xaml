@@ -6,7 +6,7 @@
         <StackLayout Margin="10">
             <ActivityIndicator IsVisible="{Binding IsScanning}" HorizontalOptions="Center" VerticalOptions="Start"/>
             <Label Text="{Binding ScannedCode}" FontSize="Large" HorizontalOptions="Center" VerticalOptions="CenterAndExpand"/>
-            <Button HorizontalOptions="Center" VerticalOptions="Center" 
+            <Button HorizontalOptions="Center" VerticalOptions="Center" Command="{Binding ScannQR}"
                     Text="Scan QR Code"/>
         </StackLayout>
     </ContentPage.Content>

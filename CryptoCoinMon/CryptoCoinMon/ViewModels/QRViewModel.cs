@@ -1,13 +1,20 @@
 ﻿using CryptoCoinMon.Helpers;
+using CryptoCoinMon.Services;
 using System;
 using System.Collections.Generic;
 using System.Text;
+using Xamarin.Forms;
 using ZXing.Net.Mobile.Forms;
 
 namespace CryptoCoinMon.ViewModels
 {
     public class QRViewModel : BindableBase
     {
+        /// <summary>
+        /// Fake service to send QRCode to an API
+        /// </summary>
+        IQRCodeGetterAPI _qRCodeGetterAPI = new QRCodeGetterAPI();
+
         private ZXingScannerPage _scannerPage;
         private bool _isScanning;
         public bool IsScanning
@@ -27,7 +34,7 @@ namespace CryptoCoinMon.ViewModels
 
         public QRViewModel()
         {
-            ScannQR = new RelayCommand(async () =>
+            ScannQR = new RelayCommand(() =>
             {
                 IsScanning = true;
                 var expectedFormat = ZXing.BarcodeFormat.QR_CODE;
@@ -37,13 +44,20 @@ namespace CryptoCoinMon.ViewModels
                 };
 
                 _scannerPage = new ZXingScannerPage(opts);
+                //_scannerPage.
 
                 _scannerPage.OnScanResult += (result) =>
                 {
-                    _scannerPage.IsScanning = false;
-                    IsScanning = false;
-                    ScannedCode = result.Text;
+                    Device.BeginInvokeOnMainThread(async () =>
+                    {
+                        _scannerPage.IsScanning = false;
+                        IsScanning = false;
+                        ScannedCode = result.Text;
+                        await _qRCodeGetterAPI.SendQRCode(ScannedCode);
+                    });
                 };
+
+                Application.Current.MainPage.Navigation.PushAsync(_scannerPage);
             });
         }
     }

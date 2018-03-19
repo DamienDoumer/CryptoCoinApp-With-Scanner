@@ -91,7 +91,8 @@ namespace CryptoCoinMon.Services
             foreach(var curr in cryptoCoins)
             {
                 curr.ImageUrl = $"{IMAGE_BASE_URL}/{curr.Id}.png";
-                curr.PriceUsd = $"$ {Decimal.Round(Convert.ToDecimal(curr.Price), 2)}";
+                var priceDecimal = Convert.ToDecimal(curr.Price);
+                curr.PriceUsd = $"$ {Decimal.Round(priceDecimal, 2)}";
                 curr.PercentChange24h = curr.PercentChange24h + " %";
                 if (curr.PercentChange24h.Contains("-"))
                 {

@@ -110,8 +110,9 @@ namespace CryptoCoinMon.ViewModels
                     CryptoCurrencies = new ObservableCollection<CryptoCurrency>(await _cryptoDataService.GetCryptoCurrenciesInDollars());
                 }
             }
-            catch
+            catch(Exception e)
             {
+                var msg = e.Message;
                 var mainPage = App.Current.MainPage;
                 await mainPage.DisplayAlert("Problem Connecting to The Internet",
                     "Please Check your Internet Connection. Pull this list down when internet connection is available",
