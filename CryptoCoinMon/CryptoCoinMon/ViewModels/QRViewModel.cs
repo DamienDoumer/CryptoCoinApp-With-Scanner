@@ -22,14 +22,14 @@ namespace CryptoCoinMon.ViewModels
             get => _scannedCode;
             set => SetProperty(ref _scannedCode, value);
         }
-
-
+        
         public RelayCommand ScannQR { get; private set; }
 
         public QRViewModel()
         {
             ScannQR = new RelayCommand(async () =>
             {
+                IsScanning = true;
                 var expectedFormat = ZXing.BarcodeFormat.QR_CODE;
                 var opts = new ZXing.Mobile.MobileBarcodeScanningOptions
                 {
@@ -40,7 +40,9 @@ namespace CryptoCoinMon.ViewModels
 
                 _scannerPage.OnScanResult += (result) =>
                 {
-
+                    _scannerPage.IsScanning = false;
+                    IsScanning = false;
+                    ScannedCode = result.Text;
                 };
             });
         }

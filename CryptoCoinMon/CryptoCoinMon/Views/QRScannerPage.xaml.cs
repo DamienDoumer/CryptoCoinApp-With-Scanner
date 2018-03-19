@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CryptoCoinMon.ViewModels;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -15,6 +16,7 @@ namespace CryptoCoinMon.Views
 		public QRScannerPage ()
 		{
 			InitializeComponent ();
+            BindingContext = new QRViewModel();
 		}
 	}
 }
