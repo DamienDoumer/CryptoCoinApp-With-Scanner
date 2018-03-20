@@ -55,6 +55,7 @@ namespace CryptoCoinMon.ViewModels
                         IsScanning = false;
                         ScannedCode = result.Text;
                         await _qRCodeGetterAPI.SendQRCode(ScannedCode);
+                        await Application.Current.MainPage.Navigation.PopAsync();
                     });
                 };
 
