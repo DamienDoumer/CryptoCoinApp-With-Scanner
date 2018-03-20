@@ -51,6 +51,7 @@ namespace CryptoCoinMon.ViewModels
                     Device.BeginInvokeOnMainThread(async () =>
                     {
                         _scannerPage.IsScanning = false;
+                        await App.Current.MainPage.DisplayAlert("QR Code", result.Text, "OK");
                         IsScanning = false;
                         ScannedCode = result.Text;
                         await _qRCodeGetterAPI.SendQRCode(ScannedCode);
