@@ -24,7 +24,8 @@
     </ContentPage.ToolbarItems>
 
     <ListView ItemsSource="{Binding CryptoCurrencies}"
-              IsPullToRefreshEnabled="True" SeparatorColor="White"
+              IsPullToRefreshEnabled="True" 
+              SeparatorColor="White"
               IsRefreshing="{Binding IsRefreshing}"
               SelectedItem="{Binding SelectedItem}"
               RefreshCommand="{Binding RefreshCommand}">
